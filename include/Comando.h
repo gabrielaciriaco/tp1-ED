@@ -1,5 +1,6 @@
 #ifndef I_Comando_H
 #define I_Comando_H
+#include <iostream>
 
 using namespace std;
 class Comando
