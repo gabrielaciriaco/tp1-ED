@@ -12,8 +12,16 @@ void FilaDeComandos::insereComando(string tipo, int coordenadaX, int coordenadaY
     insereComando(novoComando);
 }
 void FilaDeComandos::insereComando(Comando* novoComando){
-    if(primeiroComando==NULL){
+    bool primeiroComandoVazio = primeiroComando==NULL;
+    if(primeiroComandoVazio){
         primeiroComando =  novoComando;
+        return;
+    }
+    bool altaPrioridade = novoComando->getAltaPrioridade();
+    if(altaPrioridade){
+        novoComando->setProximoComando(primeiroComando);
+        primeiroComando->setAnteriorComando(novoComando);
+        primeiroComando = novoComando;
         return;
     }
     Comando* comandoAtual =  primeiroComando;

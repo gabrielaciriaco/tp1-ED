@@ -11,6 +11,7 @@ private:
     int coordenadaY;
     Comando* proximoComando;
     Comando* anteriorComando;
+    bool altaPrioridade;
 public:
     Comando(string tipo);
     Comando(string tipo,int coordenadaX, int coordenadaY);
@@ -18,6 +19,7 @@ public:
     Comando* getAnteriorComando();
     void setAnteriorComando(Comando* comando);
     void setProximoComando(Comando* comando);
+    bool getAltaPrioridade();
 };
 
 #endif
