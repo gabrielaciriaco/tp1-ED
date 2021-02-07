@@ -8,7 +8,7 @@
             "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "args": ["mapa.txt"],
+            "args": ["mapa.txt","comandos.txt"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
