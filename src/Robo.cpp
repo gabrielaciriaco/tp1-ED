@@ -33,6 +33,7 @@ void Robo::retornar(){
   posicaoY = -1;
   recursosColetados = 0;
   aliensEliminados = 0;
+  historico.limpar();
   filaDeComandos = FilaDeComandos();
 }
 
