@@ -20,17 +20,11 @@ void Robo::insereComando(string comando[4]) {
 }
 void Robo::ativar() {
   if (posicaoX != -1) {
-    cout << "BASE: ROBO " << indiceRobo << " JA ESTA EM MISSAO";
+    cout << "BASE: ROBO " << indiceRobo << " JA ESTA EM MISSAO"<<endl;
   } else {
-    cout << "BASE: ROBO " << indiceRobo << " SAIU EM MISSAO";
+    cout << "BASE: ROBO " << indiceRobo << " SAIU EM MISSAO"<<endl;
     posicaoX = 0;
     posicaoY = 0;
-  }
-}
-
-void Robo::executar() {
-  if (posicaoX == -1) {
-    cout << "BASE: ROBO " << indiceRobo << " NAO ESTA EM MISSAO";
   }
 }
 
@@ -48,4 +42,41 @@ int Robo::getRecursosColetados(){
 
 int Robo::getAliensEliminados(){
   return aliensEliminados;
+}
+
+Comando* Robo::desenfileiraComando(){
+    return filaDeComandos.desenfileirar();
+}
+
+void Robo::mover(int posicaoX,int posicaoY){
+    this->posicaoX =  posicaoX;
+    this->posicaoY = posicaoY;
+}
+
+int Robo::getPosicaoX(){
+  return this->posicaoX;
+}
+
+int Robo::getPosicaoY(){
+  return this->posicaoY;
+}
+
+void Robo::coletar(){
+  recursosColetados++;
+}
+
+void Robo::eliminar(){
+  aliensEliminados++;
+}
+
+bool Robo::estaEmMissao(){
+  return (posicaoX != -1 && posicaoY != -1);
+}
+
+void Robo::relatorio(){
+  historico.imprimir();
+}
+
+void Robo::insereItemHistorico(string acao){
+  historico.insereItemHistorico(acao);
 }

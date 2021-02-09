@@ -20,6 +20,11 @@ public:
     void setAnteriorComando(Comando* comando);
     void setProximoComando(Comando* comando);
     bool getAltaPrioridade();
+    string getTipo();
+    int getCoordenadaX();
+    int getCoordenadaY();
+    void setCoordenadaX(int coordenadaX);
+    void setCoordenadaY(int coordenadaY);
 };
 
 #endif

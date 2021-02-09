@@ -89,6 +89,7 @@ int main(int argc, char *argv[]) {
   fclose(arquivo);
   int quantidadeDeComandos = contaQuantidadeDeComandos(argv[2]);
   string **comandos = lerComandos(argv[2], quantidadeDeComandos);
-  Base controlador = Base(mapa,comandos,quantidadeDeComandos);
+  Base base = Base(mapa,comandos,quantidadeDeComandos);
+  base.imprimeRelatorio();
   return 0;
 }

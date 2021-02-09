@@ -31,3 +31,14 @@ void FilaDeComandos::insereComando(Comando* novoComando){
     novoComando->setAnteriorComando(comandoAtual);
     comandoAtual->setProximoComando(novoComando);
 }
+
+Comando* FilaDeComandos::desenfileirar(){
+    Comando *aux = primeiroComando;
+    if(aux != NULL){
+      primeiroComando = primeiroComando->getProximoComando();
+    }
+    if(primeiroComando != NULL){
+     primeiroComando->setAnteriorComando(NULL);
+    }
+    return aux;
+}

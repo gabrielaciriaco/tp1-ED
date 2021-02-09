@@ -11,11 +11,16 @@ class Base {
   char **mapa;
   int quantidadeDeRecursos;
   int quantidadeDeAlienigenas;
-
+  void executarComandos(int indiceRobo);
+  void executarComando(Comando comando,int indiceRobo);
+  void moverRobo(int indiceRobo,int coordenadaX,int coordenadaY);
+  void coletarRecursos(int indiceRobo);
+  void eliminarAlien(int indiceRobo);
  public:
   Base(char **mapa, string **comandos, int numeroDeComandos);
   void inicializaRobos(string **comandos, int numeroDeComandos);
-  void recebeRecursosEAlienigenasColetados(int indiceRobo);
+  void retornarRobo(int indiceRobo);
+  void imprimeRelatorio();
 };
 
 #endif

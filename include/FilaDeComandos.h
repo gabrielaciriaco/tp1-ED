@@ -15,6 +15,7 @@ class FilaDeComandos{
     void insereComando(string tipo);
     void insereComando(string tipo, int coordenadaX, int coordenadaY);
     void insereComando(Comando* novoComando);
+    Comando* desenfileirar();
 };
 
 
